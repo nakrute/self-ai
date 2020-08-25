@@ -6,6 +6,10 @@ $username = "ljhinkoxaubwmq";
 $password = "b74f2b65cdd29955d711d7e813b4bae5f28db37c953ffa13bb363ad2fe6e360a";
 $port = "5432"
 
+$db = parse_url(getenv("ec2-54-91-178-234.compute-1.amazonaws.com"));
+$db["path"] = ltrim($db["path"], "/");
+echo $db;
+
 // Create connection
 $conn = new pg_connect("host=$hostname, dbname=$database, user=$username, password=$password");
 // Check connection
