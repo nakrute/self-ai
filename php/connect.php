@@ -15,9 +15,9 @@ $pdo = new PDO("pgsql:" . sprintf(
     $db["pass"],
     ltrim($db["path"], "/")
 ));
-
+die("TEST")
 // Create connection
-$conn = pg_connect(getenv($hostname));
+//$conn = pg_connect(getenv($hostname));
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
