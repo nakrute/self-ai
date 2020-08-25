@@ -1,12 +1,13 @@
 <?php
 error_reporting(0);
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "mysql";
+$host = "ec2-54-91-178-234.compute-1.amazonaws.com";
+$database = "d5oiuu5n5pjd3a";
+$username = "ljhinkoxaubwmq";
+$password = "b74f2b65cdd29955d711d7e813b4bae5f28db37c953ffa13bb363ad2fe6e360a";
+$port = "5432"
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new pg_connect(host=$hostname, dbname=$database, user=$username, password=$password);
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
@@ -55,44 +56,44 @@ $creator = NULL;
 
 //assign variables so it can check if fields are there or not
 //retrive the values from the form
-$routine_name = mysqli_real_escape_string($conn, $_REQUEST['routine_name']);
-$AI = mysqli_real_escape_string($conn, $_REQUEST['AI']);
-$wth = mysqli_real_escape_string($conn, $_REQUEST['wth']);
-$phrase = mysqli_real_escape_string($conn, $_REQUEST['enter_voice_phrase']);
-$schedule = mysqli_real_escape_string($conn, $_REQUEST['schedule']);
-$extra_devices_1 = mysqli_real_escape_string($conn, $_REQUEST['extra_devices'][0]);
-$extra_devices_2 = mysqli_real_escape_string($conn, $_REQUEST['extra_devices'][1]);
-$extra_devices_3 = mysqli_real_escape_string($conn, $_REQUEST['extra_devices'][2]);
-$extra_devices_4 = mysqli_real_escape_string($conn, $_REQUEST['extra_devices'][3]);
-$extra_devices_5 = mysqli_real_escape_string($conn, $_REQUEST['extra_devices'][4]);
-$extra_devices_6 = mysqli_real_escape_string($conn, $_REQUEST['extra_devices'][5]);
-$extra_devices_7 = mysqli_real_escape_string($conn, $_REQUEST['extra_devices'][6]);
-$extra_devices_8 = mysqli_real_escape_string($conn, $_REQUEST['extra_devices'][7]);
-$extra_devices_9 = mysqli_real_escape_string($conn, $_REQUEST['extra_devices'][8]);
-$extra_devices_10 = mysqli_real_escape_string($conn, $_REQUEST['extra_devices'][9]);
-$location = mysqli_real_escape_string($conn, $_REQUEST['location']);
-$action_1 = mysqli_real_escape_string($conn, $_REQUEST['actions'][0]);
-$action_2 = mysqli_real_escape_string($conn, $_REQUEST['actions'][1]);
-$action_3 = mysqli_real_escape_string($conn, $_REQUEST['actions'][2]);
-$action_4 = mysqli_real_escape_string($conn, $_REQUEST['actions'][3]);
-$action_5 = mysqli_real_escape_string($conn, $_REQUEST['actions'][4]);
-$action_6 = mysqli_real_escape_string($conn, $_REQUEST['actions'][5]);
-$action_7 = mysqli_real_escape_string($conn, $_REQUEST['actions'][6]);
-$action_8 = mysqli_real_escape_string($conn, $_REQUEST['actions'][7]);
-$action_9 = mysqli_real_escape_string($conn, $_REQUEST['actions'][8]);
-$action_10 = mysqli_real_escape_string($conn, $_REQUEST['actions'][9]);
-$action_desc_1 = mysqli_real_escape_string($conn, $_REQUEST['action_description'][0]);
-$action_desc_2 = mysqli_real_escape_string($conn, $_REQUEST['action_description'][1]);
-$action_desc_3 = mysqli_real_escape_string($conn, $_REQUEST['action_description'][2]);
-$action_desc_4 = mysqli_real_escape_string($conn, $_REQUEST['action_description'][3]);
-$action_desc_5 = mysqli_real_escape_string($conn, $_REQUEST['action_description'][4]);
-$action_desc_6 = mysqli_real_escape_string($conn, $_REQUEST['action_description'][5]);
-$action_desc_7 = mysqli_real_escape_string($conn, $_REQUEST['action_description'][6]);
-$action_desc_8 = mysqli_real_escape_string($conn, $_REQUEST['action_description'][7]);
-$action_desc_9 = mysqli_real_escape_string($conn, $_REQUEST['action_description'][8]);
-$action_desc_10 = mysqli_real_escape_string($conn, $_REQUEST['action_description'][9]);
-$routine_summary = mysqli_real_escape_string($conn, $_REQUEST['describe']);
-$creator = mysqli_real_escape_string($conn, $_REQUEST['creator']);
+$routine_name = pg_escape_string($conn, $_REQUEST['routine_name']);
+$AI = pg_escape_string($conn, $_REQUEST['AI']);
+$wth = pg_escape_string($conn, $_REQUEST['wth']);
+$phrase = pg_escape_string($conn, $_REQUEST['enter_voice_phrase']);
+$schedule = pg_escape_string($conn, $_REQUEST['schedule']);
+$extra_devices_1 = pg_escape_string($conn, $_REQUEST['extra_devices'][0]);
+$extra_devices_2 = pg_escape_string($conn, $_REQUEST['extra_devices'][1]);
+$extra_devices_3 = pg_escape_string($conn, $_REQUEST['extra_devices'][2]);
+$extra_devices_4 = pg_escape_string($conn, $_REQUEST['extra_devices'][3]);
+$extra_devices_5 = pg_escape_string($conn, $_REQUEST['extra_devices'][4]);
+$extra_devices_6 = pg_escape_string($conn, $_REQUEST['extra_devices'][5]);
+$extra_devices_7 = pg_escape_string($conn, $_REQUEST['extra_devices'][6]);
+$extra_devices_8 = pg_escape_string($conn, $_REQUEST['extra_devices'][7]);
+$extra_devices_9 = pg_escape_string($conn, $_REQUEST['extra_devices'][8]);
+$extra_devices_10 = pg_escape_string($conn, $_REQUEST['extra_devices'][9]);
+$location = pg_escape_string($conn, $_REQUEST['location']);
+$action_1 = pg_escape_string($conn, $_REQUEST['actions'][0]);
+$action_2 = pg_escape_string($conn, $_REQUEST['actions'][1]);
+$action_3 = pg_escape_string($conn, $_REQUEST['actions'][2]);
+$action_4 = pg_escape_string($conn, $_REQUEST['actions'][3]);
+$action_5 = pg_escape_string($conn, $_REQUEST['actions'][4]);
+$action_6 = pg_escape_string($conn, $_REQUEST['actions'][5]);
+$action_7 = pg_escape_string($conn, $_REQUEST['actions'][6]);
+$action_8 = pg_escape_string($conn, $_REQUEST['actions'][7]);
+$action_9 = pg_escape_string($conn, $_REQUEST['actions'][8]);
+$action_10 = pg_escape_string($conn, $_REQUEST['actions'][9]);
+$action_desc_1 = pg_escape_string($conn, $_REQUEST['action_description'][0]);
+$action_desc_2 = pg_escape_string($conn, $_REQUEST['action_description'][1]);
+$action_desc_3 = pg_escape_string($conn, $_REQUEST['action_description'][2]);
+$action_desc_4 = pg_escape_string($conn, $_REQUEST['action_description'][3]);
+$action_desc_5 = pg_escape_string($conn, $_REQUEST['action_description'][4]);
+$action_desc_6 = pg_escape_string($conn, $_REQUEST['action_description'][5]);
+$action_desc_7 = pg_escape_string($conn, $_REQUEST['action_description'][6]);
+$action_desc_8 = pg_escape_string($conn, $_REQUEST['action_description'][7]);
+$action_desc_9 = pg_escape_string($conn, $_REQUEST['action_description'][8]);
+$action_desc_10 = pg_escape_string($conn, $_REQUEST['action_description'][9]);
+$routine_summary = pg_escape_string($conn, $_REQUEST['describe']);
+$creator = pg_escape_string($conn, $_REQUEST['creator']);
 
 if ($routine_name == NULL) {
 	echo "Routine Name is required, routine not submitted!";
