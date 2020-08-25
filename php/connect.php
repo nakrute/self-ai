@@ -1,20 +1,26 @@
 <?php
 //error_reporting(0);
-$hostname = "postgres://ljhinkoxaubwmq:b74f2b65cdd29955d711d7e813b4bae5f28db37c953ffa13bb363ad2fe6e360a@ec2-54-91-178-234.compute-1.amazonaws.com:5432/d5oiuu5n5pjd3a";
-$database = "d5oiuu5n5pjd3a";
-$username = "ljhinkoxaubwmq";
+$host = "postgres://ljhinkoxaubwmq:b74f2b65cdd29955d711d7e813b4bae5f28db37c953ffa13bb363ad2fe6e360a@ec2-54-91-178-234.compute-1.amazonaws.com:5432/d5oiuu5n5pjd3a";
+$dbname = "d5oiuu5n5pjd3a";
+$user = "ljhinkoxaubwmq";
 $password = "b74f2b65cdd29955d711d7e813b4bae5f28db37c953ffa13bb363ad2fe6e360a";
 $port = "5432";
 
-$db = parse_url(getenv("$hostname"));
-$pdo = new PDO("pgsql:" . sprintf(
-    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
-    $db["host"],
-    $db["port"],
-    $db["user"],
-    $db["pass"],
-    ltrim($db["path"], "/")
-));
+try{
+  //Set DSN data source name
+    $dsn = "pgsql:host=" . $host . ";port=" . $port .";dbname=" . $dbname . ";user=" . $user . ";password=" . $password . ";";
+
+
+  //create a pdo instance
+  $pdo = new PDO($dsn, $user, $password);
+  $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
+  $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+echo 'Connection failed: ' . $e->getMessage();
+}
+
 die("TEST")
 // Create connection
 //$conn = pg_connect(getenv($hostname));
