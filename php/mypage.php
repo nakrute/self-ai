@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 $hostname = "ec2-54-91-178-234.compute-1.amazonaws.com";
 $database = "d5oiuu5n5pjd3a";
 $username = "ljhinkoxaubwmq";
