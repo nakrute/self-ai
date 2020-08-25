@@ -10,9 +10,8 @@ $db = parse_url(getenv("$hostname"));
 $db["path"] = ltrim($db["path"], "/");
 
 // Create connection
-$conn = pg_connect(getenv("$hostname"));
+$conn = pg_connect(getenv($hostname));
 // Check connection
-echo "TEST";
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
