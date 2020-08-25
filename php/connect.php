@@ -8,7 +8,7 @@ $port = "5432";
 
 // Create connection
 echo "TEST2";
-$conn = pg_connect("host=$hostname dbname=$database user=$username password=$password port=$port");
+$conn = pg_connect(getenv("postgres://ljhinkoxaubwmq:b74f2b65cdd29955d711d7e813b4bae5f28db37c953ffa13bb363ad2fe6e360a@ec2-54-91-178-234.compute-1.amazonaws.com:5432/d5oiuu5n5pjd3a"));
 // Check connection
 echo "TEST";
 if ($conn->connect_error) {
