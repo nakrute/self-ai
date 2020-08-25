@@ -9,6 +9,7 @@ $port = "5432"
 // Create connection
 $conn = new pg_connect("host=$hostname, dbname=$database, user=$username, password=$password");
 // Check connection
+echo "TEST";
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
