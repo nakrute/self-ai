@@ -1,6 +1,6 @@
 <?php
 //error_reporting(0);
-$hostname = "ec2-54-91-178-234.compute-1.amazonaws.com";
+$hostname = "postgres://ljhinkoxaubwmq:b74f2b65cdd29955d711d7e813b4bae5f28db37c953ffa13bb363ad2fe6e360a@ec2-54-91-178-234.compute-1.amazonaws.com:5432/d5oiuu5n5pjd3a";
 $database = "d5oiuu5n5pjd3a";
 $username = "ljhinkoxaubwmq";
 $password = "b74f2b65cdd29955d711d7e813b4bae5f28db37c953ffa13bb363ad2fe6e360a";
