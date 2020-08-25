@@ -7,9 +7,15 @@ $password = "b74f2b65cdd29955d711d7e813b4bae5f28db37c953ffa13bb363ad2fe6e360a";
 $port = "5432";
 
 $db = parse_url(getenv("$hostname"));
-$db["path"] = ltrim($db["path"], "/");
+$pdo = new PDO("pgsql:" . sprintf(
+    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+    $db["host"],
+    $db["port"],
+    $db["user"],
+    $db["pass"],
+    ltrim($db["path"], "/")
+));
 
-die('$db["path"]')
 // Create connection
 $conn = pg_connect(getenv($hostname));
 // Check connection
