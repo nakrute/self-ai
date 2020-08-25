@@ -7,6 +7,7 @@ $password = "b74f2b65cdd29955d711d7e813b4bae5f28db37c953ffa13bb363ad2fe6e360a";
 $port = "5432";
 
 // Create connection
+echo "TEST2";
 $conn = pg_connect("host=$hostname dbname=$database user=$username password=$password port=$port");
 // Check connection
 echo "TEST";
