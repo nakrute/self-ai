@@ -8,7 +8,7 @@ $port = "5432"
 
 $db = parse_url(getenv("ec2-54-91-178-234.compute-1.amazonaws.com"));
 $db["path"] = ltrim($db["path"], "/");
-echo $db;
+echo $db
 
 // Create connection
 $conn = new pg_connect("host=$hostname, dbname=$database, user=$username, password=$password");
