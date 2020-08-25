@@ -8,9 +8,8 @@ $port = "5432";
 
 $db = parse_url(getenv("$hostname"));
 $db["path"] = ltrim($db["path"], "/");
-die("$db[0]");
+
 // Create connection
-echo "TEST2";
 $conn = pg_connect(getenv("$hostname"));
 // Check connection
 echo "TEST";
