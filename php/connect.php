@@ -6,12 +6,16 @@ $dbname = "d5oiuu5n5pjd3a";
 $host = "ec2-54-91-178-234.compute-1.amazonaws.com";
 $port = "5432";
 
-// Create connection
-$conn = new mysqli($host, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+$dsn = "pgsql:"
+    . "host=ec2-54-91-178-234.compute-1.amazonaws.com;"
+    . "dbname=d5oiuu5n5pjd3a;"
+    . "user=ljhinkoxaubwmq;"
+    . "port=5432;"
+    . "sslmode=require;"
+    . "password=b74f2b65cdd29955d711d7e813b4bae5f28db37c953ffa13bb363ad2fe6e360a";
+
+$db = new PDO($dsn);
+die("TESTING")
 
 //set blank values
 $routine_name = NULL;
