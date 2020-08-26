@@ -1,14 +1,10 @@
 <?php
-$db = parse_url(getenv("DATABASE_URL"));
-die($db)
-$pdo = new PDO("pgsql:" . sprintf(
-    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
-    $db["host"],
-    $db["port"],
-    $db["user"],
-    $db["pass"],
-    ltrim($db["path"], "/")
-));
+$db = (function(){
+    $parts = (parse_url(getenv('DATABASE_URL') ?: 'postgresql://username:password@localhost:5432/your_database_name_here'));
+    extract($parts);
+    $path = ltrim($path, "/");
+    return new PDO("pgsql:host={$host};port={$port};dbname={$path}", $user, $pass);
+})();
 
-die("CONNECTION WORKED")
+die("TESTING");
 ?>
