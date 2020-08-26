@@ -14,7 +14,7 @@ $dsn = "pgsql:"
     . "sslmode=require;"
     . "password=b74f2b65cdd29955d711d7e813b4bae5f28db37c953ffa13bb363ad2fe6e360a";
 
-$db = new PDO($dsn);
+$db = new PDO("postgres://ljhinkoxaubwmq:b74f2b65cdd29955d711d7e813b4bae5f28db37c953ffa13bb363ad2fe6e360a@ec2-54-91-178-234.compute-1.amazonaws.com:5432/d5oiuu5n5pjd3a");
 die("TESTING")
 
 //set blank values
