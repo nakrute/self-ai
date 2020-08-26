@@ -1,20 +1,20 @@
 <?php
-//error_reporting(0);
-$hostname = "ec2-54-91-178-234.compute-1.amazonaws.com";
-$database = "d5oiuu5n5pjd3a";
+error_reporting(0);
+$servername = "ec2-54-91-178-234.compute-1.amazonaws.com";
 $username = "ljhinkoxaubwmq";
 $password = "b74f2b65cdd29955d711d7e813b4bae5f28db37c953ffa13bb363ad2fe6e360a";
-$port = "5432"
+$dbname = "d5oiuu5n5pjd3a";
+$port = "5432";
 
 // Create connection
-$conn = new pg_connect("host=$hostname, dbname=$database, user=$username, password=$password");
+$conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
 //retrive the values from the form
-$searchcategory = pg_escape_string($conn, $_REQUEST['searchcategory']);
+$searchcategory = mysqli_real_escape_string($conn, $_REQUEST['searchcategory']);
 //echo $searchcategory;
 $sql="SELECT * FROM routines WHERE Name LIKE '%$searchcategory%'";
 #echo $sql;
