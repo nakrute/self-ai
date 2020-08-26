@@ -1,5 +1,5 @@
-<?php include('php/connect.php')?>
-<?php include('php/mypage.php')?>
+<?php include_once('php/connect.php')?>
+<?php include_once('php/mypage.php')?>
 <html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
