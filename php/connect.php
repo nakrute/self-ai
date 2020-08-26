@@ -1,9 +1,10 @@
 <?php
 error_reporting(0);
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "mysql";
+$servername = "ec2-54-91-178-234.compute-1.amazonaws.com";
+$username = "ljhinkoxaubwmq";
+$password = "b74f2b65cdd29955d711d7e813b4bae5f28db37c953ffa13bb363ad2fe6e360a";
+$dbname = "d5oiuu5n5pjd3a";
+$port = "5432";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
