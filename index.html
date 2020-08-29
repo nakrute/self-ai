@@ -2,8 +2,6 @@
 <!-- <?php include("php/mypage.php"); ?> -->
 <!DOCTYPE html>   
 <html>
-<?php include_once("php/mypage.php"); ?>
-<?php include_once("php/connect.php"); ?>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -354,6 +352,7 @@ $(document).ready(function(){
 $(document).ready(function() {
 $("#my-form-entry").submit(function(e) {
   e.preventDefault();
+  <?php include("php/connect.php"); ?>
   $.ajax( {
     url: "php/connect.php",
     method: "post",
@@ -373,6 +372,7 @@ $("#my-form-entry").submit(function(e) {
 $(document).ready(function() {
 $("#my-form-search").submit(function(e) {
   e.preventDefault();
+  <?php include("php/mypage.php"); ?>
   function myAjaxResults() {
     $.ajax( {
       url: "php/mypage.php",
