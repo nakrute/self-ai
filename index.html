@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>   
 <html>
 <meta charset="UTF-8">
@@ -91,8 +90,7 @@ body {
 <div>
   <a name="routines"></a>
     <h3 class="w3-wide w3-center" id="#routines">Routines</h3>
-    <?php include("php/mypage.php"); ?>
-    <form id="my-form-search"action="php/mypage.php" method="POST">
+    <form id="my-form-search"action="php/mypage.php" method="POST" onclick="myAjaxResults()">
       <input type="text" name="searchcategory" placeholder="Search routines here..."/>
       <input type="submit" value="Search"/>
     </form>
@@ -372,17 +370,19 @@ $("#my-form-entry").submit(function(e) {
 $(document).ready(function() {
 $("#my-form-search").submit(function(e) {
   e.preventDefault();
-  $.ajax( {
-    url: "php/mypage.php",
-    method: "get",
-    data: $("form").serialize(),
-    dataType: "text",
-    success: function(strMessage) {
-    $("#message-search").html("");
-    $("#message-search").append(strMessage);
-    $("#my-form-search")[0].reset();
-    }
-  });
+  function myAjaxResults() {
+    $.ajax( {
+      url: "php/mypage.php",
+      method: "get",
+      data: $("form").serialize(),
+      dataType: "text",
+      success: function(strMessage) {
+      $("#message-search").html("");
+      $("#message-search").append(strMessage);
+      $("#my-form-search")[0].reset();
+      }
+    });
+  }
 });
 });
 </script>
