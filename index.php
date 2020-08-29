@@ -1,3 +1,3 @@
 <?php include_once("index.html"); ?>
-<?php include_once("php/connect.php"); ?>
-<?php include_once("php/mypage.php"); ?>
+<?php include("php/connect.php"); ?>
+<?php include("php/mypage.php"); ?>
