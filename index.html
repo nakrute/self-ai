@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<?php include_once("php/config.php"); ?>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -351,7 +350,7 @@ $(document).ready(function() {
 $("#my-form-entry").submit(function(e) {
   e.preventDefault();
   $.ajax( {
-    url: "php/connect.php",
+    url: "http://self-ai.herokuapp.com/php/connect.php",
     method: "post",
     data: $("form").serialize(),
     dataType: "text",
@@ -370,7 +369,7 @@ $(document).ready(function() {
 $("#my-form-search").submit(function(e) {
   e.preventDefault();
   $.ajax( {
-    url: "php/mypage.php",
+    url: "http://self-ai.herokuapp.com/php/mypage.php",
     method: "get",
     data: $("form").serialize(),
     dataType: "text",
