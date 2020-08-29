@@ -369,7 +369,7 @@ $(document).ready(function() {
 $("#my-form-search").submit(function(e) {
   e.preventDefault();
   $.ajax( {
-    url: "../php/mypage.php",
+    url: "https://self-ai.herokuapp.com/php/mypage.php",
     method: "get",
     data: $("form").serialize(),
     dataType: "text",
