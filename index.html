@@ -1,5 +1,9 @@
+<!-- <?php include("php/connect.php"); ?> -->
+<!-- <?php include("php/mypage.php"); ?> -->
 <!DOCTYPE html>   
 <html>
+<?php include_once("php/mypage.php"); ?>
+<?php include_once("php/connect.php"); ?>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -253,7 +257,6 @@ div {
     <label for="Creator">Creator*</label>
     <input type="text" id="creator" placeholder="Creator" name="creator">
     <p class="w3-justify">* = required field</p>
-    <?php include("php/connect.php"); ?>
     <input type="submit"></input>
     <p id="message-entry"></p>
   </form>
