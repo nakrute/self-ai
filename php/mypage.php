@@ -12,7 +12,6 @@ $conn = pg_connect($conn_string);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-echo "SUCCESFULLY CONNECTED";
 
 //retrive the values from the form
 $searchcategory = mysqli_real_escape_string($conn, $_REQUEST['searchcategory']);
