@@ -350,7 +350,7 @@ $(document).ready(function() {
 $("#my-form-entry").submit(function(e) {
   e.preventDefault();
   $.ajax( {
-    url: "http://self-ai.herokuapp.com/php/connect.php",
+    url: "../php/connect.php",
     method: "post",
     data: $("form").serialize(),
     dataType: "text",
@@ -369,7 +369,7 @@ $(document).ready(function() {
 $("#my-form-search").submit(function(e) {
   e.preventDefault();
   $.ajax( {
-    url: "http://self-ai.herokuapp.com/php/mypage.php",
+    url: "../php/mypage.php",
     method: "get",
     data: $("form").serialize(),
     dataType: "text",
