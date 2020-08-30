@@ -90,7 +90,7 @@ body {
 <div>
   <a name="routines"></a>
     <h3 class="w3-wide w3-center" id="#routines">Routines</h3>
-    <form id="my-form-search" action="php/mypage.php" method="POST">
+    <form id="my-form-search" action="http://self-ai.herokuapp.com/php/mypage.php" method="GET">
       <input type="text" name="searchcategory" placeholder="Search routines here..."/>
       <input type="submit" value="Search"/>
     </form>
@@ -253,7 +253,7 @@ div {
     <label for="Creator">Creator*</label>
     <input type="text" id="creator" placeholder="Creator" name="creator">
     <p class="w3-justify">* = required field</p>
-    <input type="submit"></input>
+    <input type="submit" action="http://self-ai.herokuapp.com/php/connect.php" method="POST"></input>
     <p id="message-entry"></p>
   </form>
 </div>
@@ -302,7 +302,6 @@ $(document).ready(function(){
     var addButton = $('.add_button_device'); //Add button selector
     var wrapper = $('.device_wrapper'); //Input field wrapper
     var fieldHTML = '<div><input type="text" name="extra_devices[]" placeholder="Device..."/><a href="javascript:void(0);" class="remove_button" title="Remove Device">Remove Device</a></div>'; //New input field html 
-    var x = 1; //Initial field counter is 1
     
     //Once add button is clicked
     $(addButton).click(function(){
