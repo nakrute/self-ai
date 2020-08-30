@@ -12,12 +12,13 @@ $conn = pg_connect($conn_string);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
+echo "CONNECTED SUCCESFULLY";
 
 //retrive the values from the form
 $searchcategory = pg_escape_string($conn, $_REQUEST['searchcategory']);
 //echo $searchcategory;
 $sql="SELECT * FROM routines WHERE Name LIKE '$searchcategory'";
-#echo $sql;
+echo $sql;
 
 $result = $conn->query($sql);
 
