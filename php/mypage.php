@@ -12,21 +12,21 @@ $conn = pg_connect($conn_string);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-echo "CONNECTED SUCCESFULLY";
+
 $searcgcategory = NULL;
 //retrive the values from the form
 $searchcategory = pg_escape_string($conn, $_REQUEST['searchcategory']);
 //echo $searchcategory;
-$sql = "SELECT * FROM routines WHERE Name LIKE '%test%'";
-echo "";
-echo $searchcategory;
-echo "";
-echo $sql;
+$sql = "SELECT * FROM routines WHERE Name LIKE '%$searchcategory%'";
+//echo "";
+//echo $searchcategory;
+//echo "";
+//echo $sql;
 
-$result = $conn->query($sql);
+$result = pg_query($conn, $sql);
 
-if($result->num_rows > 0) {
-	while ($row = $result->fetch_assoc()) {
+if(pg_num_rows($result) > 0) {
+	while ($row = pg_fetch_rows($result)) {
 		if ($row['WTH'] == "Voice") 
 		{
 			if ($row[Action_2] == "") {
