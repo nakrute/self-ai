@@ -9,7 +9,6 @@ if ($conn->connect_error) {
 }
 
 //retrive the values from the form
-$searchcategory = mysqli_real_escape_string($conn, $_REQUEST['searchcategory']);
 //echo $searchcategory;
 $sql="SELECT * FROM routines WHERE Name LIKE '%$searchcategory%'";
 #echo $sql;
@@ -1472,5 +1471,5 @@ if($result->num_rows > 0) {
 	echo "No results found :(";
 }
 
-$conn->close();
+pg_close($conn);
 ?>
