@@ -13,7 +13,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 echo "CONNECTED SUCCESFULLY";
-
+$searcgcategory = NULL;
 //retrive the values from the form
 $searchcategory = pg_escape_string($conn, $_REQUEST['searchcategory']);
 //echo $searchcategory;
