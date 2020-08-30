@@ -115,5 +115,5 @@ if ($routine_name == NULL) {
 		//echo "Error" . mysqli_error($conn);
 	}
 }
-$conn->pg_close();
+pg_close($conn);
 ?>
