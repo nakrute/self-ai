@@ -56,11 +56,11 @@ $creator = NULL;
 
 //assign variables so it can check if fields are there or not
 //retrive the values from the form
-$routine_name = mysqli_real_escape_string($conn, $_REQUEST['routine_name']);
-$AI = mysqli_real_escape_string($conn, $_REQUEST['AI']);
-$wth = mysqli_real_escape_string($conn, $_REQUEST['wth']);
-$phrase = mysqli_real_escape_string($conn, $_REQUEST['enter_voice_phrase']);
-$schedule = mysqli_real_escape_string($conn, $_REQUEST['schedule']);
+$routine_name = pg_escape_string($conn, $_REQUEST['routine_name']);
+$AI = pg_escape_string($conn, $_REQUEST['AI']);
+$wth = pg_escape_string($conn, $_REQUEST['wth']);
+$phrase = pg_escape_string($conn, $_REQUEST['enter_voice_phrase']);
+$schedule = pg_escape_string($conn, $_REQUEST['schedule']);
 $extra_devices_1 = pg_escape_string($conn, $_REQUEST['extra_devices'][0]);
 $extra_devices_2 = pg_escape_string($conn, $_REQUEST['extra_devices'][1]);
 $extra_devices_3 = pg_escape_string($conn, $_REQUEST['extra_devices'][2]);
