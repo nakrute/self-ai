@@ -95,7 +95,7 @@ $action_desc_10 = $_POST['action_description'][9];
 $routine_summary = $_POST['describe'];
 $creator = $_POST['creator'];
 
-$sql = 'INSERT INTO public.routines("Name") VALUES ($creator)';
+$sql = 'INSERT INTO public.routines("Name") VALUES (' .$creator .')';
 echo $sql;
 if ($routine_name == NULL) {
 	echo "Routine Name is required, routine not submitted!";
