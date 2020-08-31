@@ -95,6 +95,7 @@ $action_desc_10 = $_POST['action_description'][9];
 $routine_summary = $_POST['describe'];
 $creator = $_POST['creator'];
 
+echo "$creator";
 if ($routine_name == NULL) {
 	echo "Routine Name is required, routine not submitted!";
 } elseif ($routine_summary == NULL) {
