@@ -14,9 +14,9 @@ if ($conn->connect_error) {
 }
 
 $searcgcategory = NULL;
+
 //retrive the values from the form
-$searchcategory = pg_escape_string($conn, $_REQUEST['searchcategory']);
-//echo $searchcategory;
+$searchcategory = $_POST['searchcategory'];
 $sql = 'SELECT * FROM routines WHERE "Name" LIKE '%" .$searchcategory ."%'";
 echo $sql;
 
