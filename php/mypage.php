@@ -17,7 +17,7 @@ $searchcategory = NULL;
 
 //retrive the values from the form
 $searchcategory = $_POST['searchcategory'];
-$sql = "SELECT * FROM routines WHERE Name LIKE '%" .$searchcategory ."%'";
+$sql = "SELECT * FROM routines WHERE 'Name' LIKE '%" .$searchcategory ."%'";
 echo $sql;
 
 $result = pg_query($conn, $sql);
