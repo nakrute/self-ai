@@ -17,11 +17,8 @@ $searcgcategory = NULL;
 //retrive the values from the form
 $searchcategory = pg_escape_string($conn, $_REQUEST['searchcategory']);
 //echo $searchcategory;
-$sql = "SELECT * FROM routines WHERE Name LIKE '%$searchcategory%'";
-//echo "";
-//echo $searchcategory;
-//echo "";
-//echo $sql;
+$sql = 'SELECT * FROM routines WHERE "Name" LIKE '%" .$searchcategory ."%'";
+echo $sql;
 
 $result = pg_query($conn, $sql);
 
