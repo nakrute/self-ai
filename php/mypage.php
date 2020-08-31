@@ -18,13 +18,11 @@ $searchcategory = NULL;
 //retrive the values from the form
 $searchcategory = $_POST['searchcategory'];
 $sql = "SELECT * FROM routines WHERE 'Name' LIKE '%" .$searchcategory ."%'";
-echo $sql;
 
 $result = pg_query($conn, $sql);
 
 if(pg_num_rows($result) > 0) {
 	while ($row = pg_fetch_assoc($result)) {
-		echo $row;
 		if ($row['WTH'] == "Voice") 
 		{
 			if ($row[Action_2] == "") {
