@@ -23,7 +23,7 @@ echo $sql;
 $result = pg_query($conn, $sql);
 
 if(pg_num_rows($result) > 0) {
-	while ($row = pg_fetch_row($result)) {
+	while ($row = pg_fetch_assoc($result)) {
 		echo $row;
 		if ($row['WTH'] == "Voice") 
 		{
