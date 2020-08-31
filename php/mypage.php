@@ -24,6 +24,7 @@ $result = pg_query($conn, $sql);
 
 if(pg_num_rows($result) > 0) {
 	while ($row = pg_fetch_rows($result)) {
+		echo $row;
 		if ($row['WTH'] == "Voice") 
 		{
 			if ($row[Action_2] == "") {
